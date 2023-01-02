@@ -19,9 +19,12 @@ const Home = () => {
           alignItems="center"
           spacing={['16', '56']}
         >
-          <VStack width={'full'} alignItems={['center', 'flex-end']}>
+          <VStack width={'full'} alignItems={['center', 'flex-end']} spacing="8">
             <Heading children="Watch Your Fav Anime" size={'2xl'} />
-            <Text children="Find you favorite anime at one place." />
+            <Text 
+            fontSize={"2xl"}
+            fontFamily="cursive"
+             textAlign={["center","left"]} children="Find you favorite anime at one place." />
             <Link to="/animes">
               <Button size={'lg'} colorScheme="yellow">
                 Explore Now
