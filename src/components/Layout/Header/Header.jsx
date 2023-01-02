@@ -5,9 +5,9 @@ import {RiDashboardFill, RiLogoutBoxLine, RiMenu5Fill} from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
 
-const LinkButton = ({url = '/', title = 'Home'}) => {
+const LinkButton = ({url = '/', title = 'Home',onClose}) => {
   return (
-    <Link to={url}>
+    <Link onClick={onClose} to={url}>
       <Button variant={'ghost'}>{title}</Button>
     </Link>
   );
@@ -25,6 +25,7 @@ const Header = () => {
 
     const logoutHandler = () => {
         console.log('logout');
+        onClose();
     };
 
   return (
@@ -52,11 +53,24 @@ const Header = () => {
           <DrawerHeader borderBottomWidth={'1px'}>AnimeTrix</DrawerHeader>
           <DrawerBody>
             <VStack spacing={'4'} alignItems="flex-start">
-              <LinkButton url={'/'} title={'Home'} />
-              <LinkButton url={'/animes'} title={'Browse All Animes'} />
-              <LinkButton url={'/request'} title={'Request a Anime'} />
-              <LinkButton url={'/contact'} title={'Contact Us'} />
-              <LinkButton url={'/about'} title={'About'} />
+              <LinkButton onClose={onClose} url={'/'} title={'Home'} />
+              <LinkButton
+                onClose={onClose}
+                url={'/animes'}
+                title={'Browse All Animes'}
+              />
+              <LinkButton
+                onClose={onClose}
+                url={'/request'}
+                title={'Request a Anime'}
+              />
+              <LinkButton
+                onClose={onClose}
+                url={'/contact'}
+                title={'Contact Us'}
+              />
+              <LinkButton onClose={onClose} 
+              url={'/about'} title={'About'} />
 
               <HStack
                 justifyContent={'space-evenly'}
@@ -68,37 +82,34 @@ const Header = () => {
                   <>
                     <VStack>
                       <HStack>
-                        <Link to="/profile">
+                        <Link onClick={onClose} to="/profile">
                           <Button variant={'ghost'} colorScheme={'yellow'}>
                             Profile
                           </Button>
                         </Link>
                         <Button variant={'ghost'} onClick={logoutHandler}>
-                        <RiLogoutBoxLine/>
+                          <RiLogoutBoxLine />
                           Logout
                         </Button>
                       </HStack>
-                      {
-                        user && user.role==="admin" && <Link to="/admin/dashboard">
-                            <Button colorScheme={"purple"}
-                            variant="ghost">
-                            <RiDashboardFill
-                                style={{margin:"4px"}}
-                            />
-                                DashBoard
-                            </Button>
+                      {user && user.role === 'admin' && (
+                        <Link onClick={onClose} to="/admin/dashboard">
+                          <Button colorScheme={'purple'} variant="ghost">
+                            <RiDashboardFill style={{ margin: '4px' }} />
+                            DashBoard
+                          </Button>
                         </Link>
-                      }
+                      )}
                     </VStack>
                   </>
                 ) : (
                   <>
-                    <Link to="/login">
+                    <Link onClick={onClose} to="/login">
                       <Button colorScheme={'yellow'}>Login</Button>
                     </Link>
 
                     <p>OR</p>
-                    <Link to="/register">
+                    <Link onClick={onClose} to="/register">
                       <Button colorScheme={'yellow'}>Signup</Button>
                     </Link>
                   </>
