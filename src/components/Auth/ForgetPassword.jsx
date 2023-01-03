@@ -7,7 +7,7 @@ const ForgetPassword = () => {
 
   return (
     <Container paddingy={"16"}
-    height={"90vh"}>
+    height={"85vh"}>
       <form>
         <Heading
           children="Forget Password ?"

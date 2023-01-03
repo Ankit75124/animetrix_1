@@ -8,7 +8,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
   return (
-    <Container h={'95vh'}>
+    <Container h={'90vh'}>
       <VStack h={'full'} justifyContent="center" spacing={'16'}>
         <Heading children={'Welcome to AnimeTrix!'} />
         <form style={{ width: '100%' }}>
