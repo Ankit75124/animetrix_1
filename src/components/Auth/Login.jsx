@@ -26,49 +26,38 @@ const Login = () => {
           </Box>
 
           <Box marginY={'4'}>
-            <FormLabel htmlFor="password" 
-            children="Enter your password" />
+            <FormLabel htmlFor="password" children="Enter your password" />
             <Input
               required
               id="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-                placeholder="********"
+              placeholder="********"
               type={'password'}
               focusBorderColor={'green.400'}
             />
           </Box>
           <Box>
-            <Link to="/forgot-password">
-                <Button fontSize={'sm'}
-                variant={'link'}
-                >
-                    Forget Password
-                </Button>
+            <Link to="/forgetpassword">
+              <Button fontSize={'sm'} variant={'link'}>
+                Forget Password
+              </Button>
             </Link>
           </Box>
 
-          <Button my="4" 
-          colorScheme={'green'} 
-          type="submit">
+          <Button my="4" colorScheme={'green'} type="submit">
             Login
           </Button>
 
           <Box my="4">
-            New User? {' '}
+            New User?{' '}
             <Link to="/register">
-                <Button fontSize={'sm'}
-                colorScheme={'green'}
-                variant={'link'}
-                >
-                    Sign Up
-                </Button>
-                {" "}
-                Here
+              <Button fontSize={'sm'} colorScheme={'green'} variant={'link'}>
+                Sign Up
+              </Button>{' '}
+              Here
             </Link>
           </Box>
-
-
         </form>
       </VStack>
     </Container>
