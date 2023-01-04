@@ -15,14 +15,21 @@ import Subscribe from './components/Payments/Subscribe';
 import PaymentSuccess from './components/Payments/PaymentSuccess';
 import PaymentFail from './components/Payments/PaymentFail';
 import NotFound from './components/Layout/NotFound/NotFound';
+import AnimePage from './components/AnimePage/AnimePage';
 
 function App() {
+
+  window.addEventListener('contextmenu',e =>{
+    e.preventDefault();
+  });
+
   return (
     <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/animes" element={<Animes />} />
+        <Route path="/anime/:id" element={<AnimePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
         <Route path="/about" element={<About />} />
