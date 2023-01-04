@@ -16,6 +16,7 @@ import PaymentSuccess from './components/Payments/PaymentSuccess';
 import PaymentFail from './components/Payments/PaymentFail';
 import NotFound from './components/Layout/NotFound/NotFound';
 import AnimePage from './components/AnimePage/AnimePage';
+import Profile from './components/Profile/Profile';
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
         <Route path="/anime/:id" element={<AnimePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
+
+        <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
