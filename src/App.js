@@ -19,6 +19,10 @@ import AnimePage from './components/AnimePage/AnimePage';
 import Profile from './components/Profile/Profile';
 import ChangePassword from './components/Profile/ChangePassword';
 import UpdateProfile from './components/Profile/UpdateProfile';
+import Dashboard from './components/Admin/Dashboard/Dashboard';
+import CreateAnime from './components/Admin/CreateAnime/CreateAnime';
+import AdminAnimes from './components/Admin/AdminAnime/AdminAnimes';
+import Users from './components/Admin/Users/Users';
 
 function App() {
 
@@ -49,6 +53,17 @@ function App() {
         <Route path="/paymentfail" element={<PaymentFail />} />
         <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         <Route path="*" element={<NotFound />} />
+
+
+
+
+
+        {/* Admin Routes */}
+
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/createanime" element={<CreateAnime />} />
+        <Route path="/admin/animes" element={<AdminAnimes />} />
+        <Route path="/admin/users" element={<Users />} />
       </Routes>
 
       <Footer />
