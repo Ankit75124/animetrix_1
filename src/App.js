@@ -17,6 +17,8 @@ import PaymentFail from './components/Payments/PaymentFail';
 import NotFound from './components/Layout/NotFound/NotFound';
 import AnimePage from './components/AnimePage/AnimePage';
 import Profile from './components/Profile/Profile';
+import ChangePassword from './components/Profile/ChangePassword';
+import UpdateProfile from './components/Profile/UpdateProfile';
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
         <Route path="/request" element={<Request />} />
 
         <Route path="/profile" element={<Profile />} />
+        <Route path="/updateprofile" element={<UpdateProfile />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
