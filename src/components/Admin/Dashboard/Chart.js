@@ -24,33 +24,33 @@ ChartJS.register(  CategoryScale,
   Legend);
 
 
-export const LineChart = () => {
+export const LineChart = ({views=[]}) => {
 
     const labels = getLastYearMonths();
-    const options={
-        responsive:true,
-        plugins:{
-            legend:{
-                position:"botton"
-            },
-                title:{
-                    display:true,
-                    text:"Yearly Views"
-                },
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
         },
+        title: {
+          display: true,
+          text: 'Yearly Views',
+        },
+      },
     };
 
-  const data = {
-    labels,
-    datasets: [
-      {
-        label:"Views",
-        data: [7, 5, 6, 4],
-        borderColor: 'rgba(107,70,193,0.5)',
-        backgroundColor: '#6b46c1',
-      },
-    ],
-  };
+    const data = {
+      labels,
+      datasets: [
+        {
+          label: 'Views',
+          data: views,
+          borderColor: 'rgba(107,70,193,0.5)',
+          backgroundColor: '#6b46c1',
+        },
+      ],
+    };
   return <Line options={options}
     data={data}
   />;
@@ -98,9 +98,6 @@ function getLastYearMonths() {
 
   const remain = 11 - currentMonth;
 
-
-  console.log(currentMonth);
-
   for (let i = currentMonth; i < months.length; i--) {
     const element = months[i];
     labels.unshift(element);
@@ -114,6 +111,7 @@ function getLastYearMonths() {
   }
 
   return labels;
+
 }
 
 

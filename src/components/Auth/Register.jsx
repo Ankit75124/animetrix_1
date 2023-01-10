@@ -85,6 +85,7 @@ const Register = () => {
           <Box marginY={'4'}>
             <FormLabel htmlFor="chooseAvatar" children="Choose Avatar" />
             <Input
+            accept='image/*'
               required
               id="chooseAvatar"
               type={'file'}
